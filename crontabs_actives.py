@@ -21,7 +21,7 @@ def get_crontabs_actives() :
             
         else : 
             if cron.returncode == 0 :
-                crontabs.append({ "utilisateur" : compte ,"succes": True , "data" : f" ---------------La crontab de {compte}-------------------- " +cron.stdout })
+                crontabs.append({ "utilisateur" : compte ,"succes": True , "data" : f" ---------------La crontab de {compte}-------------------- \n" +cron.stdout })
     if len(crontabs) != 0 : #renvoyer les resultats touours sous forme de liste de dicts pour uniformiser le format de retour
         return { "succes": True , "data" : crontabs }
     else : 
