@@ -23,6 +23,10 @@ ssh=subparser.add_parser("ssh",help="Lister les dernières connexions SSH")
 ssh.set_defaults(func=derniers_ssh.get_last_ssh)
 port=subparser.add_parser("open-port",help="Lister les ports ouverts")
 port.set_defaults(func=ports_ouverts.get_open_ports)
+user=subparser.add_parser("sudo-users",help="Lister les utilisateurs avec sudo")
+user.set_defaults(func=utilisateurs_sudo.get_sudo_users)
+s=subparser.add_parser("suid",help="Lister les fichiers SUID")
+s.set_defaults(func=suid.get_suid_files)
 args=parser.parse_args()
 if args.commande == "cron" :
     for crontab in args.func()["data"] :
