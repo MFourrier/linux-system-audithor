@@ -10,5 +10,5 @@ def get_suid_files() :
             return  { "succes": True , "data" :files.stdout }
         else :
             return { "succes": False , "data" : files.stderr } #la commande a rencontre ue erreur et on retourne le message d'erreur
-print(get_suid_files())        
+       
         
