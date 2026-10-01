@@ -22,5 +22,7 @@ fourrier=PC(crontabs_actives.get_crontabs_actives(), derniers_ssh.get_last_ssh()
             suid.get_suid_files(), utilisateurs_sudo.get_sudo_users())
  
 print (fourrier.usudo["data"])
+print(fourrier.crontabs["data"][0:]["data"])
+
     
     

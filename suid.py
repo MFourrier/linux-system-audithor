@@ -8,7 +8,7 @@ def get_suid_files() :
     else :
         if files.returncode == 0 :
             return  { "succes": True , "data" :files.stdout }
+        elif files.returncode ==1 :
+             return {"succes": True , "data": files.stdout +"\n" + "Erreurs rencontrees: \n " +  files.stderr}
         else :
             return { "succes": False , "data" : files.stderr } #la commande a rencontre ue erreur et on retourne le message d'erreur
-       
-        

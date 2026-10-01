@@ -10,7 +10,8 @@ def get_last_ssh() :
     else : 
         if resultat.returncode == 0 :
             return { "succes": True , "data" :resultat.stdout }
+        elif resultat.returncode == 1 :
+            return {"succes": True , "data":""}
         else: 
             return { "succes": False , "data" :resultat.stderr }
-        
     
