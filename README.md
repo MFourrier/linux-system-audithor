@@ -1,6 +1,6 @@
 # Linux System Auditor
 
-Outil CLI en Python pour auditer rapidement un système Linux : utilisateurs sudo, ports ouverts, services actifs, fichiers SUID, dernières connexions SSH, crontabs actives. Projet du Mois 1 de ma roadmap SOC Analyst.
+Outil CLI en Python pour auditer rapidement un système Linux : utilisateurs sudo, ports ouverts, services actifs, fichiers SUID, dernières connexions SSH, crontabs actives.
 
 ## Prérequis
 
@@ -10,15 +10,10 @@ Outil CLI en Python pour auditer rapidement un système Linux : utilisateurs sud
 
 ## Installation
 
-```bash
+``` bash
 git clone <url-du-repo>
 cd linux-system-auditor
 pip install -r requirements.txt
-```
-
-`requirements.txt` :
-```
-colorama
 ```
 
 ## Usage
@@ -54,7 +49,7 @@ python main.py --json suid.json suid
 python main.py
 ```
 
-> ⚠️ `--json FICHIER` doit être placé **avant** la sous-commande : `python main.py --json out.json all`, pas l'inverse.
+> `--json FICHIER` doit être placé **avant** la sous-commande : `python main.py --json out.json all`, pas l'inverse.
 
 ## Format de sortie
 
@@ -94,7 +89,7 @@ suid.py                 → get_suid_files()
 utilisateurs_sudo.py    → get_sudo_users()
 ```
 
-Chaque module expose une fonction unique sans paramètre, retournant un dict `{"succes": bool, "data": ...}`. `main.py` associe chaque fonction à une sous-commande via `set_defaults(func=...)`, et la fonction `afficher()` adapte le rendu terminal selon le **type réel** du contenu de `data` (string, liste de dicts, liste de strings) plutôt que selon le nom de la commande.
+Chaque module expose une fonction unique sans paramètre, retournant un dict `{"succes": bool, "data": ...}`. `main.py` associe chaque fonction à une sous-commande via `set_defaults(func=...)`, et la fonction `afficher()` adapte le rendu terminal selon le **type réel** du contenu de `data` (string, liste de dicts, liste de strings).
 
 ## Limitations connues
 
@@ -116,5 +111,4 @@ Chaque module expose une fonction unique sans paramètre, retournant un dict `{"
 | *(à ajouter lundi)* | Machine camarade 3 | | | |
 
 ## Auteur
-
-Fourrier — Projet Mois 1, roadmap SOC Analyst (18 mois)
+Fourrier
